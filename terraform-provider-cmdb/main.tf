@@ -1,17 +1,31 @@
-provider "cmdb" {
+#provider cmdb {
+#  #api_version = "v1"
+  #hostname = "localhost"
+#}
+
+terraform {
+  required_providers {
+    cmdb = {
+      source  = "registry.terraform.io/bigg01/cmdb"
+      version = "~> 0.1"
+    }
+  }
+}
+
+provider cmdb {
   api_version = "v1"
   hostname = "localhost"
 }
 
 data "name_allocation" "vm_1_name" {
-  provider = "cmdb"
+  provider = cmdb
 
   region = "us-east-1"
   resource_type = "COL"
 }
 
 data "name_details" "vm_1_details" {
-  provider = "cmdb"
+  provider = cmdb
 
   name = data.name_allocation.vm_1_name.name
 }

@@ -1,8 +1,8 @@
 package main
 
 import (
+	"github.com/bigg01/terraform-provider-cmdb/cmdb"
 	"github.com/hashicorp/terraform-plugin-sdk/plugin"
-	"github.com/boxboat/terraform-provider-cmdb/cmdb"
 )
 
 func main() {

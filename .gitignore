@@ -1,1 +1,3 @@
 .idea
+.terraform.lock.hcl
+.terraform/modules .terraform/plugin_path .terraform/providers
